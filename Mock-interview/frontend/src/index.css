@@ -1,0 +1,764 @@
+/* ==========================================================================
+   Design tokens
+   "Interview room" direction: calm ink surfaces so the candidate can focus,
+   an amber "recording/focus" accent used sparingly, green reserved for good
+   scores, red reserved ONLY for proctoring warnings so it stays unmistakable.
+   ========================================================================== */
+:root {
+  --ink-900: #10131a;
+  --ink-800: #1a1e28;
+  --ink-700: #232838;
+  --ink-600: #2e3446;
+  --line: #333a4d;
+
+  --paper: #edeff2;
+  --paper-dim: #9aa1b2;
+  --paper-faint: #6b7182;
+
+  --amber: #e8a33d;
+  --amber-dim: rgba(232, 163, 61, 0.16);
+  --green: #4fae8e;
+  --green-dim: rgba(79, 174, 142, 0.16);
+  --red: #e85d5d;
+  --red-dim: rgba(232, 93, 93, 0.16);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-card: 0 8px 24px rgba(6, 8, 12, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink-900);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+h2 {
+  font-size: 1.35rem;
+}
+h3 {
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 0.8em;
+  color: var(--paper-dim);
+}
+
+a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.page-narrow {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+
+.navbar__brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__brand-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 0 3px var(--amber-dim);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.9rem;
+}
+
+.navbar__links a,
+.navbar__links button {
+  color: var(--paper-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.navbar__links a:hover,
+.navbar__links button:hover {
+  color: var(--paper);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--ink-900);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #f0b158;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--paper);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--paper-dim);
+}
+
+.btn-danger {
+  background: transparent;
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Cards / panels
+   ========================================================================== */
+.card {
+  background: var(--ink-800);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.card + .card {
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--paper-dim);
+  margin-bottom: 6px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field textarea,
+.field select {
+  width: 100%;
+  background: var(--ink-700);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+  color: var(--paper);
+  font-size: 0.92rem;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: var(--amber);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.file-drop {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  text-align: center;
+  color: var(--paper-dim);
+  font-size: 0.86rem;
+}
+
+.error-text {
+  color: var(--red);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   Badges (question type)
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--paper-dim);
+}
+
+.badge-essay {
+  border-color: var(--line);
+  color: var(--paper-dim);
+}
+.badge-code {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+.badge-verbal {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ==========================================================================
+   Progress stepper (question N of M)
+   ========================================================================== */
+.stepper {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.stepper__dot {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.stepper__dot.is-done {
+  background: var(--green);
+}
+
+.stepper__dot.is-current {
+  background: var(--amber);
+}
+
+/* ==========================================================================
+   Interview room layout
+   ========================================================================== */
+.interview-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .interview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rail {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.question-number {
+  font-family: var(--font-mono);
+  color: var(--amber);
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.question-text {
+  font-size: 1.15rem;
+  color: var(--paper);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Camera proctor - the signature element.
+   A viewfinder-style frame: corner brackets + a state-colored border that
+   is amber while starting up, green once a face is confirmed in frame,
+   and red the moment it isn't - the same red as nowhere else in the UI.
+   ========================================================================== */
+.proctor {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--ink-900);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--amber);
+  transition: border-color 0.25s ease;
+}
+
+.proctor.is-ok {
+  border-color: var(--green);
+}
+
+.proctor.is-warning {
+  border-color: var(--red);
+  animation: proctor-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes proctor-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--red-dim);
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+.proctor video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  display: block;
+}
+
+.proctor__corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(237, 239, 242, 0.55);
+  pointer-events: none;
+}
+.proctor__corner--tl {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+.proctor__corner--tr {
+  top: 8px;
+  right: 8px;
+  border-left: none;
+  border-bottom: none;
+}
+.proctor__corner--bl {
+  bottom: 8px;
+  left: 8px;
+  border-right: none;
+  border-top: none;
+}
+.proctor__corner--br {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+.proctor__tag {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(16, 19, 26, 0.7);
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--paper);
+}
+
+.proctor__tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.proctor__warning {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--red);
+  color: var(--ink-900);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 10px;
+  animation: slide-down 0.2s ease;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.proctor-log {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--paper-faint);
+}
+
+/* ==========================================================================
+   Timer
+   ========================================================================== */
+.timer {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--paper);
+  text-align: center;
+  padding: 14px;
+  background: var(--ink-700);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+
+.timer.is-low {
+  color: var(--red);
+}
+
+/* ==========================================================================
+   Code editor
+   ========================================================================== */
+.code-editor {
+  width: 100%;
+  min-height: 260px;
+  background: var(--ink-900);
+  color: #d7e0ea;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  resize: vertical;
+  tab-size: 4;
+}
+
+.code-editor:focus {
+  border-color: var(--amber);
+}
+
+/* ==========================================================================
+   Voice recorder
+   ========================================================================== */
+.recorder {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  background: var(--ink-700);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.recorder__btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--red);
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recorder__btn.is-idle {
+  background: var(--amber);
+}
+
+.recorder__transcript {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--ink-900);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--paper-dim);
+}
+
+/* ==========================================================================
+   Score / report
+   ========================================================================== */
+.score-display {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.score-display.is-good {
+  color: var(--green);
+}
+.score-display.is-bad {
+  color: var(--red);
+}
+
+.points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.points-list li {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--paper);
+  font-size: 0.9rem;
+}
+
+.points-list li:last-child {
+  border-bottom: none;
+}
+
+.points-list.positive li::before {
+  content: "+";
+  color: var(--green);
+  font-weight: 700;
+}
+
+.points-list.negative li::before {
+  content: "-";
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Tables (dashboard)
+   ========================================================================== */
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.data-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--paper-faint);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--paper);
+}
+
+.data-table tr:hover td {
+  background: var(--ink-700);
+}
+
+.status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status-pill.completed {
+  background: var(--green-dim);
+  color: var(--green);
+}
+.status-pill.in_progress {
+  background: var(--amber-dim);
+  color: var(--amber);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--paper-dim);
+}
+
+/* ==========================================================================
+   Sources (where a question came from / what feedback was checked against)
+   ========================================================================== */
+.source-note {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--paper-dim);
+}
+
+.source-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.source-chip.is-unsourced {
+  border-color: var(--line);
+  color: var(--paper-faint);
+}
+
+.source-warning {
+  padding: 8px 12px;
+  border-left: 3px solid var(--amber);
+  background: var(--amber-dim);
+  border-radius: var(--radius-sm);
+}
+
+.source-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.source-details summary {
+  cursor: pointer;
+  margin-top: 6px;
+  color: var(--paper-dim);
+}
+
+.source-details blockquote {
+  margin: 6px 0 0;
+  padding: 6px 12px;
+  border-left: 2px solid var(--line);
+  color: var(--paper-faint);
+}
+
+.source-ref {
+  font-family: var(--font-mono);
+  color: var(--amber);
+}

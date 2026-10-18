@@ -1,0 +1,8 @@
+# Extra package for running speech-to-text on your own machine (STT_PROVIDER=local).
+# Install once, in the same environment as requirements.txt:
+#   pip install -r requirements-local.txt
+faster-whisper==1.2.1
+# faster-whisper decodes audio with PyAV ('av'). av 19 removed an argument faster-whisper still
+# passes (error: "open() got an unexpected keyword argument 'metadata_errors'"), so stay below 19.
+# Tested: av 13.1 - 18.1 decode both WAV and the browser's webm/opus recordings.
+av>=13,<19

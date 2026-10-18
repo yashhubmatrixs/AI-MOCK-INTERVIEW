@@ -1,0 +1,58 @@
+{
+  "_readme": "Starter/example questions to give the LLM a company-flavored style reference. These are illustrative, not verified verbatim leaks - replace/expand them with real questions you collect from past candidates, GeeksforGeeks interview-experience threads, LeetCode Discuss, etc. Match keys are matched against the company name the user types in (case-insensitive substring match), falling back to 'generic'.",
+
+  "zensar": [
+    { "type": "code", "question": "Given an array of integers, find the first non-repeating element. Debug or complete a partially-written function if one is provided." },
+    { "type": "code", "question": "Spot and fix the bug: a given function to reverse a linked list enters an infinite loop on certain inputs." },
+    { "type": "essay", "question": "Explain the difference between a process and a thread, and when you'd choose one over the other." },
+    { "type": "essay", "question": "Describe a time you had to debug an issue with very little information. What was your approach?" },
+    { "type": "verbal", "question": "Walk me through how you would design a simple URL shortener at a high level." },
+    { "type": "verbal", "question": "Why do you want to join Zensar as a GET intern, and what excites you about IT services / consulting work?" }
+  ],
+
+  "tcs": [
+    { "type": "code", "question": "Write a function to check if a given string is a palindrome, ignoring case and spaces." },
+    { "type": "essay", "question": "What is normalization in DBMS? Explain 1NF, 2NF and 3NF with a short example." },
+    { "type": "verbal", "question": "Tell me about yourself and your final year project." },
+    { "type": "essay", "question": "Explain OOP concepts with real-world examples for each pillar (encapsulation, inheritance, polymorphism, abstraction)." }
+  ],
+
+  "infosys": [
+    { "type": "code", "question": "Given two strings, check if one is an anagram of the other." },
+    { "type": "essay", "question": "What is the difference between SQL and NoSQL databases? When would you pick one over the other?" },
+    { "type": "verbal", "question": "Describe a situation where you worked in a team and faced a disagreement. How did you resolve it?" }
+  ],
+
+  "wipro": [
+    { "type": "code", "question": "Find the second largest number in an array without sorting it." },
+    { "type": "essay", "question": "Explain the SDLC (Software Development Life Cycle) phases briefly." },
+    { "type": "verbal", "question": "Why should we hire you over other candidates?" }
+  ],
+
+  "accenture": [
+    { "type": "essay", "question": "What do you know about Accenture's business and the role you're applying for?" },
+    { "type": "code", "question": "Write a function to find duplicate elements in an array." },
+    { "type": "verbal", "question": "Tell me about a time you had to learn a new technology quickly for a project." }
+  ],
+
+  "amazon": [
+    { "type": "code", "question": "Given a list of intervals, merge all overlapping intervals." },
+    { "type": "verbal", "question": "Tell me about a time you disliked a decision made by your team - what did you do? (Leadership Principles: Have Backbone)" },
+    { "type": "essay", "question": "How would you design a rate limiter for an API?" }
+  ],
+
+  "google": [
+    { "type": "code", "question": "Given a binary tree, determine if it is height-balanced." },
+    { "type": "essay", "question": "How would you estimate the number of queries Google Search handles per second?" },
+    { "type": "verbal", "question": "Tell me about a project where you had to make a trade-off between speed and code quality." }
+  ],
+
+  "generic": [
+    { "type": "essay", "question": "Tell me about yourself." },
+    { "type": "code", "question": "Write a function that returns the factorial of a number, handling edge cases like 0 and negative input." },
+    { "type": "essay", "question": "What are your strengths and weaknesses relevant to this role?" },
+    { "type": "verbal", "question": "Describe a challenging project from your resume in detail - your role, the obstacles, and the outcome." },
+    { "type": "code", "question": "Given an array, find two numbers that add up to a target value." },
+    { "type": "verbal", "question": "Where do you see yourself in this role two years from now?" }
+  ]
+}

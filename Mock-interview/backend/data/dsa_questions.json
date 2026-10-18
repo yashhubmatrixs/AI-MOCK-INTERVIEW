@@ -1,0 +1,355 @@
+{
+  "_readme": "Every coding question in an interview is picked from this list (never generated from the resume or job description). Edit freely: keep each 'number' unique; add categories or questions and restart the backend.",
+  "categories": [
+    {
+      "name": "Arrays",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Find the largest element in an array."
+        },
+        {
+          "number": 2,
+          "text": "Find the second-largest element in an array."
+        },
+        {
+          "number": 3,
+          "text": "Find the smallest and second-smallest elements."
+        },
+        {
+          "number": 4,
+          "text": "Reverse an array."
+        },
+        {
+          "number": 5,
+          "text": "Check whether an array is sorted."
+        },
+        {
+          "number": 6,
+          "text": "Remove duplicates from a sorted array."
+        },
+        {
+          "number": 7,
+          "text": "Move all zeros to the end of an array."
+        },
+        {
+          "number": 8,
+          "text": "Find the missing number from 1 to N."
+        },
+        {
+          "number": 9,
+          "text": "Find the element that appears only once."
+        },
+        {
+          "number": 10,
+          "text": "Rotate an array to the right by K positions."
+        },
+        {
+          "number": 11,
+          "text": "Find the maximum sum of a contiguous subarray (Kadane’s algorithm)."
+        },
+        {
+          "number": 12,
+          "text": "Find the union of two arrays."
+        }
+      ]
+    },
+    {
+      "name": "Strings",
+      "questions": [
+        {
+          "number": 13,
+          "text": "Reverse a string."
+        },
+        {
+          "number": 14,
+          "text": "Check whether a string is a palindrome."
+        },
+        {
+          "number": 15,
+          "text": "Check whether two strings are anagrams."
+        },
+        {
+          "number": 16,
+          "text": "Count vowels and consonants in a string."
+        },
+        {
+          "number": 17,
+          "text": "Find the first non-repeating character."
+        },
+        {
+          "number": 18,
+          "text": "Find the frequency of each character."
+        },
+        {
+          "number": 19,
+          "text": "Remove duplicate characters from a string."
+        },
+        {
+          "number": 20,
+          "text": "Find the longest common prefix among strings."
+        },
+        {
+          "number": 21,
+          "text": "Check whether one string is a rotation of another."
+        },
+        {
+          "number": 22,
+          "text": "Find the longest substring without repeating characters."
+        }
+      ]
+    },
+    {
+      "name": "Searching and Sorting",
+      "questions": [
+        {
+          "number": 23,
+          "text": "Implement linear search."
+        },
+        {
+          "number": 24,
+          "text": "Implement binary search."
+        },
+        {
+          "number": 25,
+          "text": "Implement bubble sort."
+        },
+        {
+          "number": 26,
+          "text": "Implement selection sort."
+        },
+        {
+          "number": 27,
+          "text": "Implement insertion sort."
+        },
+        {
+          "number": 28,
+          "text": "Merge two sorted arrays."
+        },
+        {
+          "number": 29,
+          "text": "Find the first and last occurrence of an element in a sorted array."
+        },
+        {
+          "number": 30,
+          "text": "Find the position to insert an element into a sorted array."
+        }
+      ]
+    },
+    {
+      "name": "Hashing and Two Pointers",
+      "questions": [
+        {
+          "number": 31,
+          "text": "Find two numbers that add up to a target (Two Sum)."
+        },
+        {
+          "number": 32,
+          "text": "Find all pairs whose sum equals a target."
+        },
+        {
+          "number": 33,
+          "text": "Find the majority element in an array."
+        },
+        {
+          "number": 34,
+          "text": "Find the intersection of two arrays."
+        },
+        {
+          "number": 35,
+          "text": "Find the longest consecutive sequence."
+        },
+        {
+          "number": 36,
+          "text": "Check whether a pair with a given sum exists in a sorted array."
+        },
+        {
+          "number": 37,
+          "text": "Remove duplicates from a sorted array using two pointers."
+        }
+      ]
+    },
+    {
+      "name": "Linked Lists",
+      "questions": [
+        {
+          "number": 38,
+          "text": "Create and traverse a singly linked list."
+        },
+        {
+          "number": 39,
+          "text": "Insert a node at the beginning or end."
+        },
+        {
+          "number": 40,
+          "text": "Delete a node from a linked list."
+        },
+        {
+          "number": 41,
+          "text": "Reverse a linked list."
+        },
+        {
+          "number": 42,
+          "text": "Find the middle node of a linked list."
+        },
+        {
+          "number": 43,
+          "text": "Detect a cycle in a linked list."
+        },
+        {
+          "number": 44,
+          "text": "Find the Nth node from the end."
+        },
+        {
+          "number": 45,
+          "text": "Merge two sorted linked lists."
+        }
+      ]
+    },
+    {
+      "name": "Stacks and Queues",
+      "questions": [
+        {
+          "number": 46,
+          "text": "Implement a stack using a list."
+        },
+        {
+          "number": 47,
+          "text": "Implement a queue using a list or deque."
+        },
+        {
+          "number": 48,
+          "text": "Check for balanced parentheses."
+        },
+        {
+          "number": 49,
+          "text": "Implement a queue using two stacks."
+        },
+        {
+          "number": 50,
+          "text": "Implement a stack using two queues."
+        },
+        {
+          "number": 51,
+          "text": "Find the next greater element."
+        },
+        {
+          "number": 52,
+          "text": "Evaluate a postfix expression."
+        }
+      ]
+    },
+    {
+      "name": "Recursion and Backtracking",
+      "questions": [
+        {
+          "number": 53,
+          "text": "Calculate factorial using recursion."
+        },
+        {
+          "number": 54,
+          "text": "Print the Fibonacci sequence using recursion."
+        },
+        {
+          "number": 55,
+          "text": "Find the sum of digits using recursion."
+        },
+        {
+          "number": 56,
+          "text": "Reverse a string using recursion."
+        },
+        {
+          "number": 57,
+          "text": "Generate all subsets of an array."
+        },
+        {
+          "number": 58,
+          "text": "Solve the Tower of Hanoi problem."
+        }
+      ]
+    },
+    {
+      "name": "Trees and Binary Search Trees",
+      "questions": [
+        {
+          "number": 59,
+          "text": "Perform inorder, preorder, and postorder traversal."
+        },
+        {
+          "number": 60,
+          "text": "Perform level-order traversal (BFS)."
+        },
+        {
+          "number": 61,
+          "text": "Find the maximum depth or height of a binary tree."
+        },
+        {
+          "number": 62,
+          "text": "Count the nodes in a binary tree."
+        },
+        {
+          "number": 63,
+          "text": "Search for a value in a Binary Search Tree (BST)."
+        },
+        {
+          "number": 64,
+          "text": "Insert a value into a BST."
+        },
+        {
+          "number": 65,
+          "text": "Check whether two binary trees are identical."
+        },
+        {
+          "number": 66,
+          "text": "Check whether a binary tree is balanced."
+        }
+      ]
+    },
+    {
+      "name": "Graphs",
+      "questions": [
+        {
+          "number": 67,
+          "text": "Represent a graph using an adjacency list."
+        },
+        {
+          "number": 68,
+          "text": "Implement Breadth-First Search (BFS)."
+        },
+        {
+          "number": 69,
+          "text": "Implement Depth-First Search (DFS)."
+        },
+        {
+          "number": 70,
+          "text": "Count connected components in an undirected graph."
+        },
+        {
+          "number": 71,
+          "text": "Detect a cycle in an undirected graph."
+        }
+      ]
+    },
+    {
+      "name": "Dynamic Programming and Greedy",
+      "questions": [
+        {
+          "number": 72,
+          "text": "Find the Nth Fibonacci number using dynamic programming."
+        },
+        {
+          "number": 73,
+          "text": "Solve the climbing stairs problem."
+        },
+        {
+          "number": 74,
+          "text": "Find the minimum number of coins for a given amount."
+        },
+        {
+          "number": 75,
+          "text": "Solve the 0/1 Knapsack problem."
+        }
+      ]
+    }
+  ]
+}
